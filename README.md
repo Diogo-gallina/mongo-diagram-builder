@@ -51,7 +51,7 @@ export const CommentSchema = SchemaFactory.createForClass(Comment);
 
 The schema for all tables in this example will be created in a `schema` folder as shown below, but it is not necessary for all schemas to be in this folder. They can be separated within an application module; in this case, you would point to the main project folder.
 
-Example folder structure:
+- Example folder structure:
 ![Folder Structure](./readme-images/folder-structure.png)
 
 **Obs:** ***Relations must follow the 'nameClassId' pattern, if the property does not follow this pattern the code will not understand the relations***
