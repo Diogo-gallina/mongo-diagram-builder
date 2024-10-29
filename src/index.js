@@ -10,13 +10,16 @@ async function createDiagramProcess() {
     try {
         const configContent = await config.read();
         const {sourceDir, fileExtension, outputDir, outputFileName} = configContent;
-        const sourcePath = path.resolve(__dirname, sourceDir);
+
+        const sourcePath = path.resolve(process.cwd(), sourceDir);
+        const outputPath = path.resolve(process.cwd(), outputDir);
+
         const classesData = await extractProperties(sourcePath, fileExtension);
 
         const diagramContent = generateClassDiagram(classesData);
-        writeDiagramToFile(diagramContent, outputDir, outputFileName);
+        writeDiagramToFile(diagramContent, outputPath, outputFileName);
     } catch (error) {
-        console.error('Error in main execution:', error);
+        console.error('Error to create diagram:', error);
     }
 }
 
