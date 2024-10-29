@@ -42,8 +42,14 @@ function generateClassDiagram(classesData) {
   return diagram;
 }
 
+function resolveOutputFileName(outputFileName) {
+  const DEFAULT_OUTPUT_FILE_NAME = 'class-diagram.md';
+  if (!outputFileName) outputFileName = DEFAULT_OUTPUT_FILE_NAME;
+}
+
 function writeDiagramToFile(diagramContent, outputDir, outputFileName) {
   const sourceDir = path.resolve(__dirname, outputDir);
+  resolveOutputFileName(outputFileName);
   const outputPath = path.resolve(sourceDir, `${outputFileName}.md`);
 
   fs.writeFile(outputPath, diagramContent, 'utf-8');
