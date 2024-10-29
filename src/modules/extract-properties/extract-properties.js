@@ -45,7 +45,7 @@ async function extractClassOrInterfaceProperties(filePath) {
   
   const match = schemaClassRegex.exec(content);
   if (!match) {
-    throw new Error(`Classe com o nome ${fileName} não encontrada no arquivo: ${filePath}`);
+    throw new Error(`Class with name ${fileName} not founded at: ${filePath}`);
   }
 
   const body = match[1];
