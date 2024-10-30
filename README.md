@@ -9,6 +9,8 @@ npm i -g mongo-diagram-builder
 
 ## Usage
 
+**IMPORTANT: This package currently only supports NestJS and Mongoose, with the Schema pattern found in the example below. If you are using a different framework or library, you may need to modify the code accordingly, or look for another package.**
+
 1. In your project directory, create a `mongo-diagram-builder.config.js` file with the following content:
 ```bash
 module.exports = {
